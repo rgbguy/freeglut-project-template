@@ -1,5 +1,6 @@
 #include <GL/freeglut.h>
 #include "demo/Scene_1/00-Scene_1.h"
+#include "Utils.h"
 
 bool bIsFullScreen = false;
 
@@ -53,15 +54,17 @@ void resize(int width, int height)
 
 void display(void)
 {
+	float time = getElapsedTimeInSeconds();
 	// code
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	DrawScene_1();
+	if(time > 3.0f) DrawScene_1();
 
 	glutSwapBuffers();
+	glutPostRedisplay();
 }
 
 void keyboard(unsigned char key, int x, int y)
