@@ -1,4 +1,5 @@
-#include<GL/freeglut.h>
+#include <GL/freeglut.h>
+#include "demo/Scene_1/00-Scene_1.h"
 
 bool bIsFullScreen = false;
 
@@ -58,14 +59,7 @@ void display(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glBegin(GL_TRIANGLES);
-	glColor3f(1.0f, 0.0f, 0.0f);
-	glVertex3f(0.0f, 1.0f, 0.0f);
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex3f(-1.0f, -1.0f, 0.0f);
-	glColor3f(0.0f, 0.0f, 1.0f);
-	glVertex3f(1.0f, -1.0f, 0.0f);
-	glEnd();
+	DrawScene_1();
 
 	glutSwapBuffers();
 }

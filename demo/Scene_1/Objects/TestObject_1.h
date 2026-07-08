@@ -1,0 +1,1 @@
+void DrawTestObject_1();
